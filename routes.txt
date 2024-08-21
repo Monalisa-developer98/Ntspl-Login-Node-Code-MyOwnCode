@@ -1,0 +1,71 @@
+>>>> signup ----- POST
+-----------------------------------------------
+////////  http://localhost:6798/auth/signup
+
+payload
+--------
+{
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "password": "yourpassword"
+}
+
+>>>> login ----- POST 
+----------------------------------------------
+//////// http://localhost:6798/auth/login
+
+payload
+---------
+{
+    "email": "pratishruti@gmail.com",
+    "password": "1234"
+}
+
+
+>>>>>  send otp ----- POST 
+-----------------------------------------------
+http://localhost:6798/auth/send-otp
+
+payload
+--------
+{
+    "email": "puja@gmail.com"
+}
+
+response
+------------
+{
+    "success": true,
+    "message": "OTP sent successfully",
+    "otp": "043530"
+}
+
+>>>> verify-otp  ----- POST
+------------------------------------------------
+http://localhost:6798/auth/verify-otp
+
+payload
+----------
+{
+    "otp": "043530"
+}
+
+response
+---------------
+{
+    "success": true,
+    "message": "OTP verified successfully"
+}
+
+
+http://localhost:6798/auth/reset-password
+{ 
+    "email": "puja@gmail.com", 
+    "password":"123456", 
+    "otp": "693211", 
+    "nwpassword": "123456"
+}
+response--- 
+{
+    "msg": "Password updated successfully"
+}
